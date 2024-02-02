@@ -1,0 +1,36 @@
+JENKINS INSTALLATION -----------------
+Step 1 : Launch instance
+Step 2 : Install java (Dependency)
+Step 3 : sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+         sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+Step 4 : yum install jenkins -y
+         sudo systemctl status jenkins
+         sudo systemctl start jenkins
+         sudo systemctl enable jenkins
+
+JENKINS SETUP-------------------------
+
+Step 1 : Copy PUBLIC IP ADDRESS with port - 8080(Default port number)
+Step 2 : unlock jenkins(password)
+         (path : /var/lib/jenkins/intialAdminPassword)
+
+____________________________________________________________________________________________________________________________________________
+
+TOMCAT SETUP-----------------------------
+Step 1 : Launch instance
+Step 2: Go to dlcdn apache website/tomcat/tomcat9/ latest version/bin/apache-tomcat-9.0.85.tar.gz
+Step 3 : Wget apache-tomcat-9.0.85.tar.gz (Install)
+Step 4 : Unzip file (tar xvzf apache-tomcat-9.0.85.tar.gz)
+step 5 : Rename it (tomcat)
+step 6 : Go to  cd tomcat/conf/server.xml/--For any changes like port number  or something 
+Step 7 : install java (DEPENDENCY)
+Step 8 : sh startup.sh
+       TOMCAT STARTED 
+ACCESS WITH PUBLIC IP ADDRESS with port 8080
+
+Manager
+ERROR : Access Denied
+Goto  cd conf/ cat tomcat-users.xml /-------------------------------
+
+
+______________________________________________________________________________________________________________________________________________
