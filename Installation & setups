@@ -30,6 +30,10 @@ ACCESS WITH PUBLIC IP ADDRESS with port 8080
 
 Manager
 ERROR : Access Denied
+1. Go to cd tomcat/conf/ vim tomcat-users.xml/edit
+2. shudown and restart tomcat
+
+
 Goto  cd conf/ cat tomcat-users.xml /-------------------------------
 
 
