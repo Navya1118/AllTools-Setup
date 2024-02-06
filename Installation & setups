@@ -23,7 +23,7 @@ Step 3 : Wget apache-tomcat-9.0.85.tar.gz (Install)
 Step 4 : Unzip file (tar xvzf apache-tomcat-9.0.85.tar.gz)
 step 5 : Rename it (tomcat)
 step 6 : Go to  cd tomcat/conf/server.xml/--For any changes like port number  or something 
-Step 7 : install java (DEPENDENCY)
+Step 7 : install java (DEPENDENCY) yum install java -y 
 Step 8 : sh startup.sh
        TOMCAT STARTED 
 ACCESS WITH PUBLIC IP ADDRESS with port 8080
