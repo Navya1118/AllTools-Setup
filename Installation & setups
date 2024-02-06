@@ -29,10 +29,17 @@ Step 8 : sh startup.sh
 ACCESS WITH PUBLIC IP ADDRESS with port 8080
 
 Manager
-ERROR : Access Denied
-1. Go to cd tomcat/conf/ vim tomcat-users.xml/edit
-2. shudown and restart tomcat
-
+ERROR : Access Deni [Login Purpose]
+find / -name context.xml
+vim /root/apache-tomcat-9.0.85/webapps/host-manager/META-INF/context.xml
+edit <!-- <volve            
+                                           />   -->
+vim /root/apache-tomcat-9.0.85/webapps/manager/META-INF/context.xml
+edit <!-- <volve            
+                                           />   -->
+cd bin/
+./shutdown
+./startup
 
 Goto  cd conf/ cat tomcat-users.xml /-------------------------------
 
