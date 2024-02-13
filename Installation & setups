@@ -62,3 +62,52 @@ cd sonarqube-9.4.0.54424/bin/linux-x86-64/
 
 ______________________________________________________________________________________________________________________________________________
 
+    KUBERNATES INSTALLATION & CONGIGURATION ---------------------With OUTPUT
+_____________________________________________________________________________________________________________________________________________________________________
+    
+    1  yum install docker -y
+    2  service docker start
+    3  systemctl enable docker
+    4  vim /etc/yum.repos.d/kubernetes.repo
+
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+
+    5  yum install kubelet-1.20.0  kubeadm-1.20.0  kubectl-1.20.0  kubernetes-cni
+    6  systemctl restart docker && systemctl enable docker && systemctl  restart kubelet && systemctl enable kubelet
+    7  kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address=172.31.95.31
+
+       mkdir -p $HOME/.kube
+       sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+       sudo chown $(id -u):$(id -g) $HOME/.kube/config
+       export KUBECONFIG=/etc/kubernetes/admin.conf
+
+   12  kubectl get nodes
+   13  alias k='kubectl'
+   14  k get no
+   15  k get nodes
+   16  k get po
+   17  k get po --all-namespaces
+   18  curl https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/canal.yaml -O
+       kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml 
+       kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml 
+   21  k get po --all-namespaces
+   22  k get nodes
+   23  kubectl create deployment c1 --image navya1118/my-nginx
+       kubectl create deployment c1 --image navya1118/my-nginx --dry-run=client -o yaml
+       kubectl create deployment c1 --image navya1118/my-nginx --dry-run=client -o yaml > mynginx.yaml
+   27  cat mynginx.yaml 
+   28  ls
+   29  k apply -f mynginx.yaml 
+   30  k get deployment
+   31  k expose deployment c1 --type=NodePort --port 80
+   32  k get service
+   
+     history
