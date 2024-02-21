@@ -111,3 +111,30 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
    32  k get service
    
      history
+................................................................................................................................
+ANSIBLE (MASTER_SLAVE)-------setup
+..............................................................................................................................
+Ansible install - amazon-linux-extras install ansible2 -y
+Python install  -  yum install python python-pip -y
+Add user        -   useradd ansible
+Password-set    -   passwd ansible
+Root=ansible    -   visudo--100th line -copy/print { root            ALL=(ALL)       ALL
+                                                     ansible          ALL=(ALL)      NOPASSWD:   ALL }
+Password        -   vi /etc/ssh/sshd_config (63rd line password authentication-Yes) 
+authentication 
+Restart         -   systemctl restart sshd
+
+CONNECTION-----------------------------
+
+Goto ansible user   -    su - ansible
+Genenate key using  -    ssh-keygen/cd .ssh/
+connect server using -   ssh-copy-id ansible@65.3.78.108
+                         ssh ansible@65.3.78.108
+EXIT
+cd /etc/ansible --- ll--ansible_config(uncomment inventory and root)
+vim hosts----- COPY IPADDRESS of other server here
+
+COMPLETE CONNECTION
+............................................................................................................................................
+
+
